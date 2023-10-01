@@ -6,19 +6,15 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("login.jpeg");
+    background-image: url('login.jpeg');
 }
 .container {
     max-width: 400px;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -70,47 +66,46 @@ a:hover {
     text-decoration: underline;
 }
 body {
-            background-image: url('login.jpeg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            background-color: skyblue;
-        }
+    background-image: url('bgimageph.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
 
-        .container {
-            margin-left: 40%;
-            width: 70%;
-           
-            padding: 20px;
-            
-        }
+.container {
+    margin-left: 40%;
+    width: 70%;
+   
+    padding: 20px;
+    
+}
 
-        .form-group {
-            display: flex;
-            align-items: center;
-        }
+.form-group {
+    display: flex;
+    align-items: center;
+}
 
-        .form-group label {
-            flex: 1;
-            margin-right: 10px;
-            text-align: right;
-        }
+.form-group label {
+    flex: 1;
+    margin-right: 10px;
+    text-align: right;
+}
 
-        .form-group input, .form-group select {
-            flex: 2;
-        }
+.form-group input, .form-group select {
+    flex: 2;
+}
 
-        .remember-me {
-            display: flex;
-            align-items: center;
-        }
+.remember-me {
+    display: flex;
+    align-items: center;
+}
 
-        .remember-me label {
-            flex: 1;
-            margin-right: 10px;
-        }
+.remember-me label {
+    flex: 1;
+    margin-right: 5px;
+}
 
-        .remember-me input {
-            flex: 2;
-        }
+.remember-me input {
+    flex: 2;
+}
