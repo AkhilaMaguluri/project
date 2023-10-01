@@ -2,7 +2,7 @@
 <html>
 <head>
     <style>
-        
+
 
         .container {
             margin-right: 80%;
@@ -10,7 +10,7 @@
             background-color: transparent; 
             padding: 20px;
             border-radius: 10px;
-            
+
         }
 
 
@@ -222,40 +222,85 @@
             <p>Already have an account? <a href="seller.html">Login</a></p>
         </form>
     </div>
-     <script>
-    const dropZone = document.querySelector('.drag-area');
-    const fileInput = dropZone.querySelector('input[type="file"]');
+    
+    <script>
+        const licenseDropArea = document.getElementById('license-drop-area');
+        const licenseFileInput = document.getElementById('license-file-input');
+        const logoDropArea = document.getElementById('logo-drop-area');
+        const logoFileInput = document.getElementById('logo-file-input');
 
-    // Prevent the change event on the `<input type="file">` element from triggering a change event on the other form fields
-    fileInput.addEventListener('change', (e) => {
-      e.stopPropagation();
-    });
+        // Prevent the default behavior when a file is dragged over the drop area
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(event => {
+            licenseDropArea.addEventListener(event, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            });
 
-    dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      dropZone.classList.add('active');
-    });
+            logoDropArea.addEventListener(event, (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+        });
 
-    dropZone.addEventListener('dragleave', () => {
-      dropZone.classList.remove('active');
-    });
+        // Highlight the drop area when a file is dragged over it
+        ['dragenter', 'dragover'].forEach(event => {
+            licenseDropArea.addEventListener(event, () => {
+                licenseDropArea.classList.add('active');
+            });
 
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.classList.remove('active');
+            logoDropArea.addEventListener(event, () => {
+                logoDropArea.classList.add('active');
+            });
+        });
 
-      // Get all of the files that were dropped
-      const files = e.dataTransfer.files;
+        // Remove the highlight when a file is dragged out of the drop area
+        ['dragleave', 'drop'].forEach(event => {
+            licenseDropArea.addEventListener(event, () => {
+                licenseDropArea.classList.remove('active');
+            });
 
-      // Do something with the files, such as uploading them to a server or displaying their names
-      for (const file of files) {
-        console.log('Selected file:', file.name);
-      }
-    });
+            logoDropArea.addEventListener(event, () => {
+                logoDropArea.classList.remove('active');
+            });
+        });
 
-    dropZone.querySelector('button').addEventListener('click', () => {
-      dropZone.querySelector('input[type="file"]').click();
-    });
-  </script>
+        // Handle file drop
+        licenseDropArea.addEventListener('drop', (e) => {
+            const file = e.dataTransfer.files[0];
+            handleFile(file, 'License');
+        });
+
+        logoDropArea.addEventListener('drop', (e) => {
+            const file = e.dataTransfer.files[0];
+            handleFile(file, 'Logo');
+        });
+
+        // Handle file selection using the file input
+        document.getElementById('license-choose-btn').addEventListener('click', () => {
+            licenseFileInput.click();
+        });
+
+        document.getElementById('logo-choose-btn').addEventListener('click', () => {
+            logoFileInput.click();
+        });
+
+        licenseFileInput.addEventListener('change', () => {
+            const file = licenseFileInput.files[0];
+            handleFile(file, 'License');
+        });
+
+        logoFileInput.addEventListener('change', () => {
+            const file = logoFileInput.files[0];
+            handleFile(file, 'Logo');
+        });
+
+        // Function to handle the selected/dropped file
+        function handleFile(file, fileType) {
+            if (file) {
+                // You can do further processing here, such as displaying the file name or uploading the file.
+                alert(`Uploaded ${fileType}: ${file.name}`);
+            }
+        }
+    </script>
     </body>
 </html>
