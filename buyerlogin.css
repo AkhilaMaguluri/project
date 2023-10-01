@@ -1,0 +1,96 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 0;
+	background: url('login.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.wrapper {
+	width: 420px;
+	height: 650px; /* Increased height to accommodate social icons */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 90px;
+	border-radius: 20px;
+	margin-left: 800px;
+}
+
+.wrapper h1 {
+	text-align: center;
+	font-size: 36px;
+}
+
+.forgot {
+	margin-top: 5px;
+	margin-left: 30px;
+	align-items: center;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.btn {
+	justify-content: space-between;
+	cursor: pointer;
+	margin-top: 20px;
+	margin-left: 100px;
+}
+
+.wrapper .input-box {
+	position: relative;
+	height: 50px;
+	width: 100%;
+}
+
+.input-box input {
+	border: 2px solid;
+	border-radius: 0px;
+	font-size: 16px;
+	margin: 10px;
+	border-radius: 120px;
+	padding: 10px 15px;
+}
+
+.input-box input::placeholder {
+	font-size: 10px;
+	letter-spacing: 1px;
+	text-indent: 10px;
+}
+
+.input-box i {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform: translate(-50%);
+}
+
+.social-login {
+	margin-top: 15px;
+}
+
+.social-icon {
+	font-size: 32px;
+	margin: 0 25px;
+	color: #333;
+	text-decoration: none;
+}
+
+.social-icon.google {
+	color: #DB4437; /* Google Red Color */
+}
+
+.social-icon.twitter {
+	color: #1DA1F2; /* Twitter Blue Color */
+}
+
+.social-icon.facebook {
+	color: #1877F2; /* Facebook Blue Color */
+}
+
+.social-icon:hover {
+	color: #555; /* Darker color on hover for all icons */
+}

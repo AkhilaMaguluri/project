@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        /* Your CSS styles here */
+         body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('wel.jpeg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 0 0 2rem;
+            padding: 2rem;
+             margin-left:60%;
+             margin-bottom: 2%;
+        }
+        .options {
+            display: flex;
+            margin-bottom: 2rem;
+        }
+
+        .option-box {
+            width: 150px;
+            height: 70px;
+            margin: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        .option-box:hover {
+            background-color: black;
+        }
+
+        .buyer {
+            background-color: #FF5733; 
+            color: #fff;
+        }
+        h1{
+           color: darkpinkgr; 
+        }
+
+        .seller {
+            background-color: #4CAF50; 
+            color: #fff;
+        }
+    </style>
+    <title>ShopFusion</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Select Your Category</h1>
+        </header>
+        <br><br><br>
+        <div class="options">
+            <button class="option-box buyer" id="buyerButton">BUYER</button>
+        </div>
+        <div class="options">
+            <button class="option-box seller" id="sellerButton">SELLER</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('sellerButton').addEventListener('click', function() {
+            window.location.href = 'seller.html';
+        });
+
+        document.getElementById('buyerButton').addEventListener('click', function() {
+            window.location.href = 'buyerlogin.html';
+        });
+    </script>
+</body>
+</html>

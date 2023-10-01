@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="buyersignup.css">
+    <script src="https://kit.fontawesome.com/a5cd9b4527.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="hero">
+        <h1>Create an Account</h1>
+        <div class="signup-box">
+            <div class="left-box">
+                <form onsubmit="return validateForm();">
+                    <input type="text" placeholder="Your Name" required class="input-box">
+                    <input type="text" placeholder="Username" required class="input-box">
+                    <input type="email" placeholder="Your Email"  class="input-box">
+                    <input type="text" placeholder="Phone Number" id="phoneNumber" required class="input-box">
+                    <input type="text" placeholder="OTP" id="otpNumber" required class="input-box">
+                    <input type="password" placeholder="Create Password" id="password" required class="input-box">
+                    <input type="password" placeholder="Confirm Password" id="confirmPassword" required class="input-box">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I accept the terms and conditions</label>
+                    <p id="phoneNumberError" style="color: red;"></p>
+                    <p id="passwordError" style="color: red;"></p>
+                    <button type="submit">SIGN UP <span>&#x27f6;</span></button>
+                </form>
+            </div>
+            <div class="right-box">
+                <a href="" class="fb-link"><i class="fab fa-facebook-f"></i>Connect with Facebook</a>
+                <a href="" class="tw-link"><i class="fab fa-twitter"></i>Connect with Twitter</a>
+                <a href="" class="g-link"><i class="fab fa-google"></i>Connect with Google</a>
+            </div>
+        </div>
+        <p class="login-msg">Already have an account? <a href="buyerlogin.html">Login Now</a></p>
+    </div>
+    
+    <script src="buyersignup.js"></script>
+</body>
+</html>

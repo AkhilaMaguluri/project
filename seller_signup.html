@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        
+
+        .container {
+            margin-right: 80%;
+            width: 70%;
+            background-color: transparent; 
+            padding: 20px;
+            border-radius: 10px;
+            
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+         body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url('signup.jpeg'); /* Set the background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Calibri, Helvetica, sans-serif;
+        }
+
+
+        .drag-area {
+            border: 2px dashed black;
+            height: 300px;
+            width: 300px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .drag-area.active {
+            border: 2px solid #fff;
+        }
+
+        .drag-area .icon {
+            font-size: 50px;
+            color: #fff;
+        }
+
+        .drag-area header {
+            font-size: 20px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .drag-area span {
+            font-size: 15px;
+            font-weight: 500;
+            color: black;
+            margin: 10px 0 15px 0;
+        }
+
+        .drag-area button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            outline: none;
+            background: #fff;
+            color: black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        input[type="int"],
+        input[type="email"],
+        textarea[name="Address"],
+        textarea[name="Description"],
+        select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            display: inline-block;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-group label {
+            flex: 1;
+            margin-right: 10px;
+            text-align: right;
+        }
+
+        .form-group input,
+        .form-group select {
+            flex: 2;
+        }
+
+        button.registerbtn {
+            background-color: #76d979;
+            width: 100%;
+            color: black;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        form {
+            border: 5px solid black;
+            padding: 20px;
+            background-color: papayawhip;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            text-align: center;
+            margin-left: 40%;
+        }
+
+        .heading {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Registration Form</h1>
+        <form>
+            <div class="form-group">
+                <label for="name">Business name:</label>
+                <input type="text" id="name" placeholder="enter shop or business name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="shopName">Owner's Full Name:</label>
+                <input type="text" id="shopName" placeholder="enter owner's name" name="shop name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Business Email*:</label>
+                <input type="email" id="email" placeholder="eg: abc@gmail.com" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="number">Business Contact Number:</label>
+                <input type="text" id="number" placeholder="eg: +91 9876543210" name="number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="goods">Type of Goods:</label>
+                <select id="goods" name="goods">
+                    <option value="">Select the type of Goods -------</option>
+                    <option value="Electronic">Electronic</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Groceries">Groceries</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="type">Business Type:</label>
+                <select id="type" name="type">
+                    <option value="">Select Business type -------</option>
+                    <option value="Manufacturer">Manufacturer</option>
+                    <option value="Retailer">Retailer</option>
+                    <option value="Wholesaler">Wholesaler</option>
+                    <option value="Service provider">Service provider</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="years">Years in Business:</label>
+                <input type="text" id="years" placeholder="Since how many years business is running" name="years" required>
+            </div>
+
+            <div class="form-group">
+                <label for="license">Business License Document:</label>
+                <div class="drag-area">
+    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+    <header>Drop the File</header>
+    <span>OR</span>
+    <button>Choose File</button>
+    <input type="file" hidden>
+  </div>
+            </div>
+
+            <div class="form-group">
+                <label for="logo">Company Logo:</label>
+                <div class="drag-area">
+  <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+  <header>Drop the Second File</header>
+  <span>OR</span>
+  <button>Choose Second File</button>
+  <input type="file" hidden>
+</div>
+            </div>
+
+            <input type="checkbox" checked="checked"> I affirm that all the information provided is accurate and I agree to the terms and conditions.<br><br>
+
+            <button type="button" class="registerbtn">Register</button>
+            <p>Already have an account? <a href="seller.html">Login</a></p>
+        </form>
+    </div>
+     <script>
+    const dropZone = document.querySelector('.drag-area');
+    const fileInput = dropZone.querySelector('input[type="file"]');
+
+    // Prevent the change event on the `<input type="file">` element from triggering a change event on the other form fields
+    fileInput.addEventListener('change', (e) => {
+      e.stopPropagation();
+    });
+
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.classList.add('active');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('active');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('active');
+
+      // Get all of the files that were dropped
+      const files = e.dataTransfer.files;
+
+      // Do something with the files, such as uploading them to a server or displaying their names
+      for (const file of files) {
+        console.log('Selected file:', file.name);
+      }
+    });
+
+    dropZone.querySelector('button').addEventListener('click', () => {
+      dropZone.querySelector('input[type="file"]').click();
+    });
+  </script>
+    </body>
+</html>
