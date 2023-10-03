@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('login.jpeg');
+    background-image: url('seller.jpeg');
 }
 .container {
     max-width: 400px;
