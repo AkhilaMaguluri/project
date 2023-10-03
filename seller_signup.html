@@ -2,9 +2,8 @@
 <html>
 <head>
     <style>
-
-
-        .container {
+    
+         .container {
             margin-right: 80%;
             width: 70%;
             background-color: transparent; 
@@ -141,6 +140,7 @@
             font-weight: 600;
             margin-bottom: 20px;
         }
+
     </style>
     <title>Registration</title>
 </head>
@@ -148,7 +148,8 @@
     <div class="container">
         <h1 class="heading">Registration Form</h1>
         <form>
-            <div class="form-group">
+            <!-- Your form fields and other HTML content here -->
+             <div class="form-group">
                 <label for="name">Business name:</label>
                 <input type="text" id="name" placeholder="enter shop or business name" name="name" required>
             </div>
@@ -196,30 +197,30 @@
 
             <div class="form-group">
                 <label for="license">Business License Document:</label>
-                <div class="drag-area">
-    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-    <header>Drop the File</header>
-    <span>OR</span>
-    <button>Choose File</button>
-    <input type="file" hidden>
-  </div>
+                <div class="drag-area" id="license-drop-area">
+                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <header>Drop the File</header>
+                    <span>OR</span>
+                    <button type="button" id="license-choose-btn">Choose File</button>
+                    <input type="file" id="license-file-input" hidden>
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="logo">Company Logo:</label>
-                <div class="drag-area">
-  <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-  <header>Drop the Second File</header>
-  <span>OR</span>
-  <button>Choose Second File</button>
-  <input type="file" hidden>
-</div>
+                <div class="drag-area" id="logo-drop-area">
+                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <header>Drop the Second File</header>
+                    <span>OR</span>
+                    <button type="button" id="logo-choose-btn">Choose Second File</button>
+                    <input type="file" id="logo-file-input" hidden>
+                </div>
             </div>
-
-            <input type="checkbox" checked="checked"> I affirm that all the information provided is accurate and I agree to the terms and conditions.<br><br>
+             <input type="checkbox" checked="checked"> I affirm that all the information provided is accurate and I agree to the terms and conditions.<br><br>
 
             <button type="button" class="registerbtn">Register</button>
             <p>Already have an account? <a href="seller.html">Login</a></p>
+
         </form>
     </div>
     
@@ -228,8 +229,7 @@
         const licenseFileInput = document.getElementById('license-file-input');
         const logoDropArea = document.getElementById('logo-drop-area');
         const logoFileInput = document.getElementById('logo-file-input');
-
-        // Prevent the default behavior when a file is dragged over the drop area
+        
         ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(event => {
             licenseDropArea.addEventListener(event, (e) => {
                 e.preventDefault();
@@ -241,8 +241,7 @@
                 e.stopPropagation();
             });
         });
-
-        // Highlight the drop area when a file is dragged over it
+        
         ['dragenter', 'dragover'].forEach(event => {
             licenseDropArea.addEventListener(event, () => {
                 licenseDropArea.classList.add('active');
@@ -253,7 +252,7 @@
             });
         });
 
-        // Remove the highlight when a file is dragged out of the drop area
+
         ['dragleave', 'drop'].forEach(event => {
             licenseDropArea.addEventListener(event, () => {
                 licenseDropArea.classList.remove('active');
@@ -264,7 +263,7 @@
             });
         });
 
-        // Handle file drop
+
         licenseDropArea.addEventListener('drop', (e) => {
             const file = e.dataTransfer.files[0];
             handleFile(file, 'License');
@@ -275,7 +274,6 @@
             handleFile(file, 'Logo');
         });
 
-        // Handle file selection using the file input
         document.getElementById('license-choose-btn').addEventListener('click', () => {
             licenseFileInput.click();
         });
@@ -294,13 +292,13 @@
             handleFile(file, 'Logo');
         });
 
-        // Function to handle the selected/dropped file
+        
         function handleFile(file, fileType) {
             if (file) {
-                // You can do further processing here, such as displaying the file name or uploading the file.
+
                 alert(`Uploaded ${fileType}: ${file.name}`);
             }
         }
     </script>
-    </body>
+</body>
 </html>
