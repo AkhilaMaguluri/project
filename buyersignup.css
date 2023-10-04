@@ -4,7 +4,17 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-
+h1{
+    text-align: left;
+}
+form {
+    border: 5px solid black;
+    padding: 10px;
+    background-color: rgb(239, 208, 236);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    
+}
 body {
     margin: 0;
     padding: 0;
@@ -16,16 +26,16 @@ body {
 
 .hero {
     position: relative;
-    text-align: center;
-    padding: 40px;
+    text-align: left;
+    padding: 50px;
     
 }
 
 .hero h1 {
     color: #333;
-    margin-left: 100px;
+    margin-left: 60px;
     font-weight: 500;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
 }
 
 .signup-box {
@@ -38,7 +48,7 @@ body {
 }
 
 .left-box {
-    padding: 50px;
+    padding: 20px;
     flex-basis: 50%;
     flex-grow: 1;
     background: transparent;
@@ -48,7 +58,7 @@ body {
 }
 
 .right-box {
-    padding: 50px;
+    padding: 60px;
     flex-basis: 50%;
     flex-grow: 1;
     background: transparent;
@@ -61,19 +71,20 @@ body {
     width: 100%;
     padding: 10px;
     margin: 10px;
-    border: 2px solid white;
+    border: 2px solid black;
     outline: none;
     color: glossyblack;
     font-size: 16px; 
     background: transparent;
+    margin-left: 2px;
 }
 
 ::placeholder {
-    color: #fff;
+    color: black;
 }
 
 input[type=checkbox] {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .left-box label {
@@ -132,8 +143,8 @@ input[type=checkbox] {
     background: #1778f2;
 }
 
-.tw-link {
-    background: #1da1f2;
+.ig-link {
+    background: #E1306C;
 }
 
 .g-link {
@@ -150,4 +161,8 @@ input[type=checkbox] {
 .login-msg a {
     color: white;
     text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    color:#f29df6;
 }
